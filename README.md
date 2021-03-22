@@ -95,12 +95,12 @@ Aplicar estas configurações irá reiniciar o serviço
 
 ![](https://github.com/leuribeiru/sshd-dhcpd-cockpit-plugin/blob/main/images/8.png?raw=true)
 
-##Configurar IP Fixo:
+## Configurar IP Fixo:
 É possível fixar o IP de alguma máquina informando o MAC da placa de rede, e qual o IP que será atribuído, além de um nome para identificação. É possível também excluir configurações de IP fixos já feitas anteriormente. É preciso aplicar as alterações na feitas na Lista de IP fixos. O serviço será reiniciado.
 
 ![](https://github.com/leuribeiru/sshd-dhcpd-cockpit-plugin/blob/main/images/9.png?raw=true)
 
-##Monitorar os clientes conectados
+## Monitorar os clientes conectados
 Nesta seção é possível visualizar o IP, nome do host e endereço MAC de todos os clientes que receberam um IP automático, e que estão ativos.
 
 ![](https://github.com/leuribeiru/sshd-dhcpd-cockpit-plugin/blob/main/images/10.png?raw=true)
