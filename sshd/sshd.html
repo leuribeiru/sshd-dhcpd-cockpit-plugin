@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Pinger</title>
+	<meta charset="utf-8">
+	<!-- <link href="../base1/cockpit.css" type="text/css" rel="stylesheet"> -->
+	<link href="./bootstrap.min.css" type="text/css" rel="stylesheet">
+	<script src="../base1/cockpit.js"></script>
+
+</head>
+
+<body>
+	<div class="container">
+		<h2 class="text-center">SSHD</h2>
+		<button id="btn_install" class="btn btn-primary">Instalar</button>
+		<div id="show_properties">
+			<hr>
+			<section>
+				<div class="form-check form-switch">
+					<input id="input_start" type="checkbox" class="form-check-input">
+					<b><label for="input_start" id="status_service" class="form-check-label"></label></b>
+				</div>
+				<div class="form-check form-switch">
+					<input id="input_enabled" type="checkbox" class="form-check-input">
+					<b><label for="input_enabled" id="enabled_service" class="form-check-label"></label></b>
+				</div>
+			</section>
+			<hr>
+			<div id="user_alert"  style="display: none;">
+				
+			</div>
+			<section class="card">
+				<div class="card-body">
+					<div class="d-flex">
+						<div class="p-2 flex-grow-1">
+							<h3 class="card-title">Configurações:</h3>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="listen_address">Interface de
+							acesso: </label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="listen_address" type="text"
+								class="form-control"></div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="port">Porta de acesso: </label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="port" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="authorized_keys_file">Arquivo de
+							autorização de chaves: </label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="authorized_keys_file" type="text"
+								class="form-control"></div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="permit_root_login">Permitir
+							acesso com root? </label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="permit_root_login" type="checkbox"
+								class="form-check-input"></div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="x11_forwarding">Redirecionamento
+							de conexões X11? </label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="x11_forwarding" type="checkbox"
+								class="form-check-input"></div>
+					</div>
+					<div>
+						<button id="btn_apply_setup" class="btn btn-primary is-invalid">Aplicar
+							Configurações</button>
+						<small class="invalid-feedback">O serviço sera reiniciado</small>
+					</div>
+				</div>
+			</section>
+			<hr>
+			<section class="card">
+				<div class="card-body">
+
+					<div class="d-flex">
+						<div class="p-2 flex-grow-1">
+							<h3 class="card-title">Acessos autorizados com Chave para este usuário <i><span
+										id="user_login"></span></i>:</h3>
+						</div>
+						<div class="p-2">
+							<button id="btn_refresh_keys_allowed" class="btn btn-primary">Recarregar</button>
+						</div>
+					</div>
+
+					<div id="table_keys_allowed" class="list-group mb-3"></div>
+
+					<div>
+						<button id="btn_apply_keys_allowed" class="btn btn-primary is-invalid">Aplicar Alteração na Lista de Chaves</button>
+						<small class="invalid-feedback">O serviço será reiniciado</small>
+					</div>
+				</div>
+
+			</section>
+			<hr>
+			<section class="card">
+				<div class="card-body">
+					<div class="d-flex">
+						<div class="p-2 flex-grow-1">
+							<h3 class="card-title">Conexões ativas com o servidor:</h3>
+						</div>
+						<div class="p-2">
+							<button id="btn_refresh_active_conections" class="btn btn-primary">Atualizar</button>
+						</div>
+					</div>
+					<div id="table_active_conections" class="list-group mb-3"></div>
+				</div>
+			</section>
+			<hr>
+		</div>
+	</div>
+
+	<script src="./bootstrap.bundle.min.js"></script>
+	<script src="sshd.js"></script>
+</body>
+
+</html>

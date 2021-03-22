@@ -1,0 +1,10 @@
+{
+    "version": 1.0,
+
+    "tools": {
+        "dhcpd": {
+            "label": "DHCPD",
+            "path": "dhcpd.html"
+        }
+    }
+}

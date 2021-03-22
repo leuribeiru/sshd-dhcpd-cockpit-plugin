@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Pinger</title>
+	<meta charset="utf-8">
+	<link href="./bootstrap.min.css" type="text/css" rel="stylesheet">
+	<script src="../base1/cockpit.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h2 class="text-center">DHCPD</h2>
+		<button id="btn_install" class="btn btn-primary">Instalar</button>
+		<div id="show_properties">
+			<hr>
+			<section>
+				<div class="form-check form-switch">
+					<input id="input_start" type="checkbox" class="form-check-input">
+					<b><label for="input_start" id="status_service" class="form-check-label"></label></b>
+				</div>
+				<div class="form-check form-switch">
+					<input id="input_enabled" type="checkbox" class="form-check-input">
+					<b><label for="input_enabled" id="enabled_service" class="form-check-label"></label></b>
+				</div>
+			</section>
+			<hr>
+			<div id="user_alert"  style="display: none;">
+				
+			</div>
+			<section class="card">
+				<div class="card-body">
+					<div class="d-flex">
+						<div class="p-2 flex-grow-1">
+							<h3>Configurações:</h3>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="dns1">DNS Primario: </label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="dns1" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="dns2">DNS Secundário: </label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="dns2" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="domain_name">Nome do Domínio:
+						</label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="domain_name" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="default_lease">Tempo de locação
+							padrão: </label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="default_lease" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="max_lease">Tempo máximo de
+							locação:
+						</label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="max_lease" type="text" class="form-control">
+						</div>
+					</div>
+
+
+					<div>
+						<button id="btn_apply_setup" class="btn btn-primary is-invalid">Aplicar
+							Configurações</button>
+						<small class="invalid-feedback">O serviço sera reiniciado</small>
+					</div>
+				</div>
+			</section>
+			<hr>
+			<section class="card">
+				<div class="card-body">
+					<div class="d-flex">
+						<div class="p-2 flex-grow-1">
+							<h3>Configurações de subrede:</h3>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="subnet">Endereço da subrede:
+						</label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="subnet" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="netmask">Mascara da subrede:
+						</label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="netmask" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="row">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label">Intervalo</label>
+						<div class="col-6 col-md-4 col-lg-3"></div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="range_init">De: </label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="range_init" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="range_init">Até: </label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="range_final" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="gateway">Gateway: </label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="gateway" type="text" class="form-control">
+						</div>
+					</div>
+
+					<div>
+						<button id="btn_apply_setup_subnet" class="btn btn-primary is-invalid">Aplicar Configurações
+							de subrede</button>
+						<small class="invalid-feedback">O serviço sera reiniciado</small>
+					</div>
+				</div>
+			</section>
+			<hr>
+			<section class="card">
+				<div class="card-body">
+					<div class="d-flex">
+						<div class="p-2 flex-grow-1">
+							<h3>Configurações de IP Fixo:</h3>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="host">Nome: </label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="host" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="mac">Endereço MAC: </label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="mac" type="text" class="form-control"></div>
+					</div>
+					<div class="row mb-2">
+						<label class="col-6 col-md-4 col-lg-3 col-form-label" for="fixed_address">IP atribuido:
+						</label>
+						<div class="col-6 col-md-4 col-lg-3"><input id="fixed_address" type="text" class="form-control">
+						</div>
+					</div>
+					<div>
+						<button id="btn_add_fixed_address" class="btn btn-primary is-invalid">Adicionar à
+							lista</button>
+						<small class="invalid-feedback">As alterações da lista devem ser aplicadas</small>
+					</div>
+					<section class="card mt-2 mb-3">
+						<div class="card-body">
+							<div class="d-flex">
+								<div class="p-2 flex-grow-1">
+									<h4>Lista de IP fixos</h4>
+								</div>
+								<div class="p-2">
+									<button id="btn_refresh_fixed_address" class="btn btn-primary">Recarregar</button>
+								</div>
+							</div>
+							<div id="fixed_address_table" class="list-group mb-3"></div>
+						</div>
+					</section>
+					<div>
+						<button id="btn_apply_fixed_address" class="btn btn-primary is-invalid">Aplicar Alteração na
+							Lista de IP fixos</button>
+						<small class="invalid-feedback">O serviço sera reiniciado</small>
+					</div>
+				</div>
+			</section>
+			<hr>
+			<section class="card">
+				<div class="card-body">
+					<div class="d-flex">
+						<div class="p-2 flex-grow-1">
+							<h3 class="card-title">Clientes conectados:</h3>
+						</div>
+						<div class="p-2">
+							<button id="btn_refresh_clients_conections" class="btn btn-primary">Atualizar</button>
+						</div>
+					</div>
+					<div id="table_clients_conections" class="list-group mb-3"></div>
+				</div>
+			</section>
+		</div>
+
+	</div>
+
+	<script src="./bootstrap.bundle.min.js"></script>
+	<script src="dhcpd.js"></script>
+</body>
+
+</html>
