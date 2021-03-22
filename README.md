@@ -61,14 +61,14 @@ Por padrão, o acesso é permitido em todas as interfaces, ou seja, se este valo
 
 É possível configurar o arquivo que vai gerenciar as chaves de autorização de acesso, se for alterar este valor certifique-se de que o arquivo informado existe.
 
-É possível ativar ou desativar o acesso com usuário "root" e o Redirecionamento de conexões X11.
+É possível ativar ou desativar o acesso com usuário **_root_** e o Redirecionamento de conexões X11.
 
 Ao aplicar as configurações o serviço será reiniciado
 
 ![](https://github.com/leuribeiru/sshd-dhcpd-cockpit-plugin/blob/main/images/4.png?raw=true)
 
 ## Gerenciamento de Chaves de acesso
-Nessa seção são exibidas os hosts que tem acesso com chave pelo serviço SSHD do usuário corrente (logado no cockpit) de acordo com o arquivo informado na configuração da seção anterior. É possível eliminar o acesso por chave da lista de hosts com acesso permitido por chave, é necessário Aplicar as Alterações na Lista de Chaves, e o serviço será reiniciado.
+Nessa seção são exibidas os hosts que tem acesso com chave pelo serviço SSHD do usuário corrente (logado no cockpit) de acordo com o arquivo informado na configuração da seção anterior. É possível excluir um acesso por chave da lista de hosts com acesso permitido por chave.É necessário Aplicar as Alterações na Lista de Chaves, e o serviço será reiniciado.
 
 ![](https://github.com/leuribeiru/sshd-dhcpd-cockpit-plugin/blob/main/images/5.png?raw=true)
 
